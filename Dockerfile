@@ -3,6 +3,6 @@ COPY . .
 RUN mvn clean package -DskipTests
 
 FROM openjdk:17-jdk-slim
-COPY --from=build /target/donatedesk-0.0.1-SNAPSHOT.jar donatedesk.jar
+COPY --from=build /target/demo-0.0.1-SNAPSHOT.jar demo.jar
 EXPOSE 8080
-ENTRYPOINT ["java","-jar","donatedesk.jar"]
+ENTRYPOINT ["java","-jar","demo.jar"]
